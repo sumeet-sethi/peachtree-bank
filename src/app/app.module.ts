@@ -9,6 +9,13 @@ import { MatCardModule } from '@angular/material/card';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
+import { MatTableModule } from '@angular/material/table';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatSortModule } from '@angular/material/sort';
+import { MatGridListModule } from '@angular/material/grid-list';
+import { MatInputModule } from '@angular/material/input';
+
+
 
 
 import { TransferComponent } from './transfer/transfer.component';
@@ -27,7 +34,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MatToolbarModule, MatCardModule, MatDividerModule, MatButtonModule, MatIconModule
+    MatToolbarModule, MatCardModule, MatDividerModule, MatButtonModule, MatIconModule, MatTableModule, MatFormFieldModule, MatSortModule, MatGridListModule, MatInputModule
   ],
   providers: [],
   bootstrap: [AppComponent]
