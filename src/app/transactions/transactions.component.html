@@ -1,7 +1,10 @@
 <mat-card>
-    <mat-toolbar color="accent">Recent Transactions</mat-toolbar>
+    <mat-toolbar color="accent">
+        <mat-icon aria-hidden="false" aria-label="Transactions">work_outline</mat-icon>
+        Recent Transactions
+    </mat-toolbar>
     <mat-card-title>
-        <mat-form-field>
+        <mat-form-field color="warn">
             <mat-label>Search by typing...</mat-label>
             <input matInput (keyup)="applyFilter($event)">
         </mat-form-field>
@@ -15,12 +18,12 @@
             </ng-container>
 
             <ng-container matColumnDef="transactionDate">
-                <th mat-header-cell *matHeaderCellDef mat-sort-header> Date </th>
-                <td mat-cell *matCellDef="let element"> {{getDate(element.transactionDate)}} </td>
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> DATE </th>
+                <td mat-cell *matCellDef="let element" [ngStyle]="{'width': '150px'}"> {{getDate(element.transactionDate)}} </td>
             </ng-container>
 
             <ng-container matColumnDef="merchant">
-                <th mat-header-cell *matHeaderCellDef mat-sort-header> Merchant </th>
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> BENEFICIARY </th>
                 <td mat-cell *matCellDef="let element">
                     <mat-grid-list cols="2" rowHeight="5:1">
                         <mat-grid-tile [colspan]="1" [rowspan]="2"><img src='{{element.merchantLogo}}' width="50" height="50"></mat-grid-tile>
@@ -31,7 +34,7 @@
             </ng-container>
 
             <ng-container matColumnDef="amount">
-                <th mat-header-cell *matHeaderCellDef mat-sort-header> Amount </th>
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> AMOUNT </th>
                 <td mat-cell *matCellDef="let element"><b>-${{element.amount}}</b></td>
             </ng-container>
 
