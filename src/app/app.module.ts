@@ -15,9 +15,6 @@ import { MatSortModule } from '@angular/material/sort';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatInputModule } from '@angular/material/input';
 
-
-
-
 import { TransferComponent } from './transfer/transfer.component';
 import { TransactionsComponent } from './transactions/transactions.component';
 import { NotFoundComponent } from './not-found/not-found.component';

@@ -16,7 +16,7 @@ export class TransactionsComponent implements OnInit {
     this.dataSource.sort = this.sort;
   }
 
-  displayedColumns: string[] = ['categoryCode', 'transactionDate', 'merchantLogo', 'merchant', 'amount',];
+  displayedColumns: string[] = ['categoryCode', 'transactionDate', 'merchant', 'amount',];
   dataSource = new MatTableDataSource(TransactionalData.data);
 
   applyFilter(event: Event) {
