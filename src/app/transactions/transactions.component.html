@@ -3,7 +3,7 @@
         <mat-icon aria-hidden="false" aria-label="Transactions">work_outline</mat-icon>
         Recent Transactions
     </mat-toolbar>
-    <mat-card-title>
+    <mat-card-subtitle>
         <mat-form-field color="warn">
             <mat-label>Search by typing...</mat-label>
             <input matInput (keyup)="applyFilter($event)" [(ngModel)]="value">
@@ -15,7 +15,7 @@
         <button mat-button mat-raised-button color="primary" (click)="sortByDate()">DATE</button>
         <button mat-button mat-raised-button color="primary"(click)="sortByBeneficiary()">BENEFICIARY</button>
         <button mat-button mat-raised-button color="primary"(click)="sortByAmount()">AMOUNT</button>
-    </mat-card-title>
+    </mat-card-subtitle>
     <mat-card-content>
         <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
 
@@ -26,7 +26,7 @@
 
             <ng-container matColumnDef="transactionDate">
                 <th mat-header-cell *matHeaderCellDef mat-sort-header> DATE </th>
-                <td mat-cell *matCellDef="let element" [ngStyle]="{'width': '20%'}">
+                <td mat-cell *matCellDef="let element" [ngStyle]="{'width': '30%'}">
                     {{getDate(element.transactionDate)}} </td>
             </ng-container>
 
@@ -43,7 +43,7 @@
 
             <ng-container matColumnDef="amount">
                 <th mat-header-cell *matHeaderCellDef mat-sort-header> AMOUNT </th>
-                <td mat-cell *matCellDef="let element" [ngStyle]="{'width': '20%'}"><b>-${{element.amount}}</b></td>
+                <td mat-cell *matCellDef="let element" [ngStyle]="{'width': '10%'}"><b>-${{element.amount}}</b></td>
             </ng-container>
 
             <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>

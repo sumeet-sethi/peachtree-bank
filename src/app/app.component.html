@@ -1,6 +1,12 @@
-<mat-toolbar color="primary">
-    <img src="../assets/logo.jpg" alt="Peachtree Bank" class="center">
-</mat-toolbar>
+<div fxLayout="row" fxLayoutAlign="center">
+    <mat-toolbar color="primary">
+        <div fxLayout="row" fxLayoutAlign="space-around">
+            <img src="../assets/logo.jpg" alt="Peachtree Bank" class="center">
+        </div>
+    </mat-toolbar>
+</div>
 <mat-divider color="warn"></mat-divider>
 
-<router-outlet></router-outlet>
+<div fxLayout="row" fxLayoutAlign="center" [ngStyle]="{'background-image': 'url(' + '../assets/background.jpg' + ')'}">
+    <router-outlet></router-outlet>
+</div>

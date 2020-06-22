@@ -1,12 +1,4 @@
-
-<app-transfer (sendTransfer)="sendTransferTransaction($event)"></app-transfer>
-<app-transactions [receiveTransfer]="receiveTransferTransaction"></app-transactions>
-
-<!-- <mat-grid-list cols="4">
-    <mat-grid-tile [colspan]="1">
-        <app-transfer></app-transfer>
-    </mat-grid-tile>
-    <mat-grid-tile [colspan]="3">
-        <app-transactions></app-transactions>
-    </mat-grid-tile>
-</mat-grid-list> -->
+<div fxLayout="row" fxLayoutAlign="center">
+    <app-transfer (sendTransfer)="sendTransferTransaction($event)"></app-transfer>
+    <app-transactions [receiveTransfer]="receiveTransferTransaction"></app-transactions>
+</div>

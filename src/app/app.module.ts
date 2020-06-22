@@ -7,6 +7,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 
+import { FlexLayoutModule } from '@angular/flex-layout';
+
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatCardModule } from '@angular/material/card';
 import { MatDividerModule } from '@angular/material/divider';
@@ -40,6 +42,7 @@ import { HomeComponent } from './home/home.component';
     BrowserAnimationsModule,
     HttpClientModule,
     FormsModule,
+    FlexLayoutModule,
     MatToolbarModule, MatCardModule, MatDividerModule, MatButtonModule, MatIconModule, MatTableModule, MatFormFieldModule, MatSortModule, MatGridListModule, MatInputModule, MatSnackBarModule
   ],
   providers: [BankDataService],
