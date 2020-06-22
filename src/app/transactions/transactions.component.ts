@@ -9,11 +9,13 @@ import TransactionalData from '../../mock/transactions.json';
   styleUrls: ['./transactions.component.sass']
 })
 export class TransactionsComponent implements OnInit {
+  value:string;
   @ViewChild(MatSort, { static: true }) sort: MatSort;
   constructor() { }
 
   ngOnInit(): void {
     this.dataSource.sort = this.sort;
+    this.value = '';
   }
 
   displayedColumns: string[] = ['categoryCode', 'transactionDate', 'merchant', 'amount',];
