@@ -12,7 +12,8 @@ import { TransactionSchema } from '../interfaces/transaction-schema';
 export class TransactionsComponent implements OnInit {
   @Input() receiveTransfer: TransactionSchema;
   @ViewChild(MatSort, { static: true }) sort: MatSort;
-  
+  displayedColumns: string[] = ['categoryCode', 'transactionDate', 'merchant', 'amount',];
+  dataSource = new MatTableDataSource(TransactionalData.data);
   value: string;
 
   constructor() { }
@@ -23,12 +24,12 @@ export class TransactionsComponent implements OnInit {
   }
 
   ngOnChanges()	{
-    this.dataSource = new MatTableDataSource(TransactionalData.data.concat(this.receiveTransfer));
+    TransactionalData.data = TransactionalData.data.concat(this.receiveTransfer)
+    TransactionalData.data = TransactionalData.data.sort((a, b) => (a.transactionDate > b.transactionDate) ? -1 : 1)
+    this.dataSource = new MatTableDataSource(TransactionalData.data);
   }
-
-
-  displayedColumns: string[] = ['categoryCode', 'transactionDate', 'merchant', 'amount',];
-  dataSource = new MatTableDataSource(TransactionalData.data);
+  
+  
 
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
