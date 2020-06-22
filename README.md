@@ -20,7 +20,6 @@ This initial version of this application has completed the following aspects of 
     -   Sorting is using Angular Material's inbuilt table header sort per column instead of dedicated buttons which are on the design document.
 
 This project has some requirements which I couldn't make it in time as I only had a weekend to work on this. Here are the things which I couldn't get to:
--   Dedicated buttons for sorting for Transactional data, instead this is achieved with Angular Material's table header sort per column
 -   i18n and a11y couldn't be added with time left
 -   Couldn't get to adding Kanit specific font
 -   Added FlexLayout to handle basic layout management but couldn't get to adding responsive behavior per element with the time left
