@@ -15,6 +15,9 @@ export class TransactionsComponent implements OnInit {
   displayedColumns: string[];
   dataSource = new MatTableDataSource(TransactionalData.data);
   value: string;
+  sortByDateUpDown: boolean;
+  sortByBeneficiaryUpDown: boolean;
+  sortByAmountUpDown: boolean;
 
   constructor() { }
 
@@ -22,6 +25,9 @@ export class TransactionsComponent implements OnInit {
     this.dataSource.sort = this.sort;
     this.value = '';
     this.displayedColumns = ['categoryCode', 'transactionDate', 'merchant', 'amount',];
+    this.sortByDateUpDown = false;
+    this.sortByBeneficiaryUpDown = false;
+    this.sortByAmountUpDown = false;
   }
 
   ngOnChanges() {
@@ -29,7 +35,7 @@ export class TransactionsComponent implements OnInit {
       TransactionalData.data = TransactionalData.data.concat(this.receiveTransfer)
     }
     TransactionalData.data = TransactionalData.data.sort((a, b) => (a.transactionDate > b.transactionDate) ? -1 : 1)
-    this.dataSource = new MatTableDataSource(TransactionalData.data);
+    this.setDataSource();
   }
 
   applyFilter(event: Event) {
@@ -39,6 +45,31 @@ export class TransactionsComponent implements OnInit {
 
   public getDate(date: Date) {
     return new Date(date).toDateString();
+  }
+
+  sortByDate() {
+    if (this.sortByDateUpDown) {
+      TransactionalData.data = TransactionalData.data.sort((a, b) => (a.transactionDate > b.transactionDate) ? 1 : -1)
+      this.sortByDateUpDown = true;
+    } else {
+      TransactionalData.data = TransactionalData.data.sort((a, b) => (a.transactionDate > b.transactionDate) ? -1 : 1)
+    }
+    
+    this.setDataSource();
+  }
+
+  sortByBeneficiary() {
+    TransactionalData.data = TransactionalData.data.sort((a, b) => (a.merchant > b.merchant) ? -1 : 1)
+    this.setDataSource();
+  }
+
+  sortByAmount() {
+    TransactionalData.data = TransactionalData.data.sort((a, b) => (a.amount > b.amount) ? -1 : 1)
+    this.setDataSource();
+  }
+
+  setDataSource() {
+    this.dataSource = new MatTableDataSource(TransactionalData.data);
   }
 
 }
