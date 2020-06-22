@@ -23,6 +23,7 @@ import { TransferComponent } from './transfer/transfer.component';
 import { TransactionsComponent } from './transactions/transactions.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { BankDataService } from './services/bank-data.service';
+import { HomeComponent } from './home/home.component';
 
 
 @NgModule({
@@ -30,7 +31,8 @@ import { BankDataService } from './services/bank-data.service';
     AppComponent,
     TransferComponent,
     TransactionsComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,

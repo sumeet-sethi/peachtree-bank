@@ -6,6 +6,8 @@ This project also use Angular Material library for all ready to use visual compo
 ## Release Notes [0.1.0]
 This initial version of this application has completed the following aspects of the business requirements:
 
+- Home Component which brings the two Transfer and Transcation components together
+- NotFound Component which shows up on any invalid route
 - Transfer Component
     -   Form with 3 fields (From Account, To Account and Amount) and 3 buttons (Clear, Submit, Tranfer)
     -   Checks to not overdraft amount more that $ -500
