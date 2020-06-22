@@ -28,7 +28,6 @@ This project may feel raw in some places but given the right time, this can be m
 
 ## Known Bugs
 -   In Transaction Component, the close icon on Search by typing will clear the value but doesn't fire the event to reset the table below
--   Adding a new transaction from Transfer component saves it in Trascaction components list but the second transaction after that and onwards tend to replace previously added new transactions. This could be related to the lack of ability to not save data on a DB with a backend service
 -   Sorting works with initial data coming from mock but once a new transaction is added, the sort stops responding. This seems to be tied to this [issue](https://stackoverflow.com/a/57014516/5420817) but even on making it false it now fails the initial and update event
 
 ## About Me
