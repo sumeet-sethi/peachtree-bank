@@ -23,6 +23,7 @@ This project has some requirements which I couldn't make it in time as I only ha
 -   Dedicated buttons for sorting for Transactional data, instead this is achieved with Angular Material's table header sort per column
 -   i18n and a11y couldn't be added with time left
 -   Couldn't get to adding Kanit specific font
+-   Added FlexLayout to handle basic layout management but couldn't get to adding responsive behavior per element with the time left
 
 This project may feel raw in some places but given the right time, this can be made into an application keeping with latest standards.
 
