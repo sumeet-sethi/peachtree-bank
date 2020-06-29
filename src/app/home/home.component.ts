@@ -13,7 +13,7 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
     this.receiveTransferTransaction = {
-      amount: '',
+      amount: 0,
       categoryCode: '',
       merchant: '',
       merchantLogo: '',

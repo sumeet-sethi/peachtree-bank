@@ -1,5 +1,5 @@
 export interface TransactionSchema {
-    amount: string 
+    amount: number;
     categoryCode: string;
     merchant: string;
     merchantLogo: string;
