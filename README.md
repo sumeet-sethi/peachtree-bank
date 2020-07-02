@@ -1,9 +1,15 @@
 # PeachtreeBank
 
-This project scaffolding was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.7.
+This project scaffolding was generated with [Angular CLI](https://github.com/angular/angular-cli) and with this change it has been upgraded to version 10.0 (from version 9.1.7)
 This project also use Angular Material library for all ready to use visual components.
 
-## Release Notes [0.1.0]
+## Release Notes [0.1.1]
+
+### Whats New:
+-  Under the hood changes like upgraded angular core libraries to the latest angular version 10.0
+
+### Business Requirements Delivered:
+
 This initial version of this application has completed the following aspects of the business requirements:
 
 - Home Component which brings the two Transfer and Transcation components together
@@ -20,7 +26,7 @@ This initial version of this application has completed the following aspects of 
     -   Sorting is using Angular Material's inbuilt table header sort per column instead of dedicated buttons which are on the design document.
 
 This project has some requirements which I couldn't make it in time as I only had a weekend to work on this. Here are the things which I couldn't get to:
--   i18n and a11y couldn't be added with time left
+-   i18n and a11y (a11y was added only in some places using aria-label for accessibility) couldn't be added with time left
 -   Couldn't get to adding Kanit specific font
 -   Added FlexLayout to handle basic layout management but couldn't get to adding responsive behavior per element with the time left
 
