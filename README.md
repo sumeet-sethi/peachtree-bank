@@ -3,10 +3,10 @@
 This project scaffolding was generated with [Angular CLI](https://github.com/angular/angular-cli) and with this change it has been upgraded to version 10.0 (from version 9.1.7)
 This project also use Angular Material library for all ready to use visual components.
 
-## Release Notes [0.1.1]
+## Release Notes [0.2.0]
 
 ### Whats New:
--  Under the hood changes like upgraded angular core libraries to the latest angular version 10.0
+-  State Management using NGRX
 
 ### Business Requirements Delivered:
 
@@ -33,8 +33,7 @@ This project has some requirements which I couldn't make it in time as I only ha
 This project may feel raw in some places but given the right time, this can be made into an application keeping with latest standards.
 
 ## Known Bugs
--   In Transaction Component, the close icon on Search by typing will clear the value but doesn't fire the event to reset the table below
--   Sorting works with initial data coming from mock but once a new transaction is added, the sort stops responding. This seems to be tied to this [issue].(https://stackoverflow.com/a/57014516/5420817) but even on making it false it now fails the initial and update event. Also the button sorting seems a bit buggy when new entries are added and needs to be looked into
+-   Bugs are tracked on Github [Issues](https://github.com/setry14/peachtree-bank/issues) section.
 
 ## About Me
 Other than what is already mentioned on my resume, I enjoy working with Front-End technologies more than other things. I have over 12 years of experience and most of which is on Front-End. I keep my self upto date on the latest tech in in industry (and that too not just limited to Front-End). I started as an intern in this idustry and have gotten to a point where I went to architecting sets of UI application as a solution for one of my client, that I worked for and then stablizing as a Tech Lead on the current project which I have been on for around 3 years now. As a career path next move, I have choosen UI Architecture which I did for a little while ago and want to continue on that trajectory.

@@ -26,6 +26,7 @@ import { TransactionsComponent } from './transactions/transactions.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { BankDataService } from './services/bank-data.service';
 import { HomeComponent } from './home/home.component';
+import { StoreModule } from '@ngrx/store';
 
 
 @NgModule({
@@ -43,7 +44,8 @@ import { HomeComponent } from './home/home.component';
     HttpClientModule,
     FormsModule,
     FlexLayoutModule,
-    MatToolbarModule, MatCardModule, MatDividerModule, MatButtonModule, MatIconModule, MatTableModule, MatFormFieldModule, MatSortModule, MatGridListModule, MatInputModule, MatSnackBarModule
+    MatToolbarModule, MatCardModule, MatDividerModule, MatButtonModule, MatIconModule, MatTableModule, MatFormFieldModule, MatSortModule, MatGridListModule, MatInputModule, MatSnackBarModule,
+    StoreModule.forRoot({}, {})
   ],
   providers: [BankDataService],
   bootstrap: [AppComponent]
