@@ -9,7 +9,7 @@ import { TransactionSchema } from '../interfaces/transaction-schema';
   templateUrl: './transactions.component.html',
   styleUrls: ['./transactions.component.sass']
 })
-export class TransactionsComponent implements OnInit {
+export class TransactionsComponent implements OnInit, OnChanges {
   @Input() receiveTransfer: TransactionSchema;
   @ViewChild(MatSort, { static: true }) sort: MatSort;
   displayedColumns: string[];
