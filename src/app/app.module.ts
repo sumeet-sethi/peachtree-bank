@@ -43,7 +43,17 @@ import { HomeComponent } from './home/home.component';
     HttpClientModule,
     FormsModule,
     FlexLayoutModule,
-    MatToolbarModule, MatCardModule, MatDividerModule, MatButtonModule, MatIconModule, MatTableModule, MatFormFieldModule, MatSortModule, MatGridListModule, MatInputModule, MatSnackBarModule
+    MatToolbarModule,
+    MatCardModule,
+    MatDividerModule,
+    MatButtonModule,
+    MatIconModule,
+    MatTableModule,
+    MatFormFieldModule,
+    MatSortModule,
+    MatGridListModule,
+    MatInputModule,
+    MatSnackBarModule
   ],
   providers: [BankDataService],
   bootstrap: [AppComponent]

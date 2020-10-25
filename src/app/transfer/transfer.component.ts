@@ -41,8 +41,8 @@ export class TransferComponent implements OnInit {
   transfer() {
     if ((this.balance - this.amount) > -500.00) {
       this.balance = this.balance - this.amount;
-      //TODO: If there is time try fixing this assignment bug
-      //this.balance = (Math.round(this.balance * 100) / 100).toFixed(2);
+      // TODO: If there is time try fixing this assignment bug
+      // this.balance = (Math.round(this.balance * 100) / 100).toFixed(2);
       this.myAccount = this.accountType + this.balance;
       this.sendTransfer.emit({
         amount: this.amount,
