@@ -17,7 +17,6 @@ exports.config = {
     browserName: 'chrome'
   },
   directConnect: true,
-  baseUrl: 'http://localhost:4200/',
   framework: 'jasmine',
   jasmineNodeOpts: {
     showColors: true,
@@ -29,6 +28,6 @@ exports.config = {
       project: require('path').join(__dirname, './tsconfig.json')
     });
     jasmine.getEnv().addReporter(new SpecReporter({ spec: { displayStacktrace: StacktraceOption.PRETTY } }));
-    jasmine.getEnv().addReporter(new HtmlReporter({ baseDirectory: 'tmp/screenshots' }).getJasmine2Reporter());
+    jasmine.getEnv().addReporter(new HtmlReporter({ baseDirectory: 'e2e/report' }).getJasmine2Reporter());
   }
 };
