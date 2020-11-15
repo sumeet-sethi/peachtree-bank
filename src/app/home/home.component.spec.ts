@@ -1,24 +1,26 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { HomeComponent } from './home.component';
+import { AppModule } from '../app.module';
 
 describe('HomeComponent', () => {
   let component: HomeComponent;
   let fixture: ComponentFixture<HomeComponent>;
 
-  beforeEach(async(() => {
+  const prepareTestBed = () => {
     TestBed.configureTestingModule({
-      declarations: [ HomeComponent ]
-    })
-    .compileComponents();
-  }));
-
-  beforeEach(() => {
+      declarations: [HomeComponent],
+      imports: [AppModule]
+    }).compileComponents();
     fixture = TestBed.createComponent(HomeComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
+  }
+
+  beforeEach(() => {
+    prepareTestBed();
   });
 
-  it('should create', () => {
+  it('should create component', () => {
     expect(component).toBeTruthy();
   });
 
@@ -34,4 +36,5 @@ describe('HomeComponent', () => {
     component.sendTransferTransaction(sendTransferTransactionObject);
     expect(component.receiveTransferTransaction === sendTransferTransactionObject);
   });
+
 });

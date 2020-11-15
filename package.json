@@ -6,8 +6,7 @@
     "start": "ng serve",
     "build": "ng build",
     "lint": "ng lint",
-    "test": "ng test",
-    "test-code-coverage": "ng test --no-watch --code-coverage",
+    "test": "ng test --no-watch --code-coverage",
     "e2e": "ng e2e",
     "e2e-baseUrl": "npm run e2e -- --baseUrl=https://peachtree-bank.netlify.app/",
     "version": "echo $npm_package_version"
