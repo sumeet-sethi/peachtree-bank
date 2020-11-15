@@ -18,12 +18,12 @@ export class HomeComponent implements OnInit {
       merchant: '',
       merchantLogo: '',
       transactionDate: 0,
-      transactionType: '',
-    }
+      transactionType: ''
+    };
   }
 
   sendTransferTransaction(sendTransferTransactionObject: TransactionSchema) {
-    this.receiveTransferTransaction = sendTransferTransactionObject
+    this.receiveTransferTransaction = sendTransferTransactionObject;
   }
 
 

@@ -2,7 +2,8 @@
 // Protractor configuration file, see link for more information
 // https://github.com/angular/protractor/blob/master/lib/config.ts
 
-const { SpecReporter } = require('jasmine-spec-reporter');
+const { SpecReporter, StacktraceOption } = require('jasmine-spec-reporter');
+const HtmlReporter = require('protractor-beautiful-reporter');
 
 /**
  * @type { import("protractor").Config }
@@ -16,17 +17,17 @@ exports.config = {
     browserName: 'chrome'
   },
   directConnect: true,
-  baseUrl: 'http://localhost:4200/',
   framework: 'jasmine',
   jasmineNodeOpts: {
     showColors: true,
     defaultTimeoutInterval: 30000,
-    print: function() {}
+    print: function () { }
   },
   onPrepare() {
     require('ts-node').register({
       project: require('path').join(__dirname, './tsconfig.json')
     });
-    jasmine.getEnv().addReporter(new SpecReporter({ spec: { displayStacktrace: true } }));
+    jasmine.getEnv().addReporter(new SpecReporter({ spec: { displayStacktrace: StacktraceOption.PRETTY } }));
+    jasmine.getEnv().addReporter(new HtmlReporter({ baseDirectory: 'e2e/report' }).getJasmine2Reporter());
   }
 };

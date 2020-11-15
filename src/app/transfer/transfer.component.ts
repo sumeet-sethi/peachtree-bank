@@ -17,7 +17,7 @@ export class TransferComponent implements OnInit {
   preview: boolean;
 
 
-  constructor(private _snackBar: MatSnackBar) {
+  constructor(private snackBar: MatSnackBar) {
     this.balance = 5824.76;
     this.accountType = 'Free Checking(4692) : $ ';
     this.myAccount = this.accountType + this.balance;
@@ -41,8 +41,8 @@ export class TransferComponent implements OnInit {
   transfer() {
     if ((this.balance - this.amount) > -500.00) {
       this.balance = this.balance - this.amount;
-      //TODO: If there is time try fixing this assignment bug
-      //this.balance = (Math.round(this.balance * 100) / 100).toFixed(2);
+      // TODO: If there is time try fixing this assignment bug
+      // this.balance = (Math.round(this.balance * 100) / 100).toFixed(2);
       this.myAccount = this.accountType + this.balance;
       this.sendTransfer.emit({
         amount: this.amount,
@@ -54,11 +54,11 @@ export class TransferComponent implements OnInit {
       });
       this.clear();
       this.preview = false;
-      this._snackBar.open('Transaction completed', 'SUCCESS', {
+      this.snackBar.open('Transaction completed', 'SUCCESS', {
         duration: 2000,
       });
     } else {
-      this._snackBar.open('Overdraft cannot go beyond $ -500', 'ERROR', {
+      this.snackBar.open('Overdraft cannot go beyond $ -500', 'ERROR', {
         duration: 2000,
       });
       this.preview = false;

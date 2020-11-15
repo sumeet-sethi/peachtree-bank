@@ -9,7 +9,7 @@ import { TransactionSchema } from '../interfaces/transaction-schema';
   templateUrl: './transactions.component.html',
   styleUrls: ['./transactions.component.sass']
 })
-export class TransactionsComponent implements OnInit {
+export class TransactionsComponent implements OnInit, OnChanges {
   @Input() receiveTransfer: TransactionSchema;
   @ViewChild(MatSort, { static: true }) sort: MatSort;
   displayedColumns: string[];
@@ -24,7 +24,7 @@ export class TransactionsComponent implements OnInit {
   ngOnInit(): void {
     this.dataSource.sort = this.sort;
     this.value = '';
-    this.displayedColumns = ['categoryCode', 'transactionDate', 'merchant', 'amount',];
+    this.displayedColumns = ['categoryCode', 'transactionDate', 'merchant', 'amount'];
     this.sortByDateUpDown = false;
     this.sortByBeneficiaryUpDown = false;
     this.sortByAmountUpDown = false;
@@ -32,9 +32,9 @@ export class TransactionsComponent implements OnInit {
 
   ngOnChanges() {
     if (this.receiveTransfer.transactionDate !== 0) {
-      TransactionalData.data = TransactionalData.data.concat(this.receiveTransfer)
+      TransactionalData.data = TransactionalData.data.concat(this.receiveTransfer);
     }
-    TransactionalData.data = TransactionalData.data.sort((a, b) => (a.transactionDate > b.transactionDate) ? -1 : 1)
+    TransactionalData.data = TransactionalData.data.sort((a, b) => (a.transactionDate > b.transactionDate) ? -1 : 1);
     this.setDataSource();
   }
 
@@ -49,10 +49,10 @@ export class TransactionsComponent implements OnInit {
 
   sortByDate() {
     if (this.sortByDateUpDown) {
-      TransactionalData.data = TransactionalData.data.sort((a, b) => (a.transactionDate > b.transactionDate) ? -1 : 1)
+      TransactionalData.data = TransactionalData.data.sort((a, b) => (a.transactionDate > b.transactionDate) ? -1 : 1);
       this.sortByDateUpDown = false;
     } else {
-      TransactionalData.data = TransactionalData.data.sort((a, b) => (a.transactionDate > b.transactionDate) ? 1 : -1)
+      TransactionalData.data = TransactionalData.data.sort((a, b) => (a.transactionDate > b.transactionDate) ? 1 : -1);
       this.sortByDateUpDown = true;
     }
     this.setDataSource();
@@ -60,10 +60,10 @@ export class TransactionsComponent implements OnInit {
 
   sortByBeneficiary() {
     if (this.sortByBeneficiaryUpDown) {
-      TransactionalData.data = TransactionalData.data.sort((a, b) => (a.merchant > b.merchant) ? -1 : 1)
+      TransactionalData.data = TransactionalData.data.sort((a, b) => (a.merchant > b.merchant) ? -1 : 1);
       this.sortByBeneficiaryUpDown = false;
     } else {
-      TransactionalData.data = TransactionalData.data.sort((a, b) => (a.merchant > b.merchant) ? 1 : -1)
+      TransactionalData.data = TransactionalData.data.sort((a, b) => (a.merchant > b.merchant) ? 1 : -1);
       this.sortByBeneficiaryUpDown = true;
     }
     this.setDataSource();
@@ -71,10 +71,10 @@ export class TransactionsComponent implements OnInit {
 
   sortByAmount() {
     if (this.sortByAmountUpDown) {
-      TransactionalData.data = TransactionalData.data.sort((a, b) => (a.amount > b.amount) ? -1 : 1)
+      TransactionalData.data = TransactionalData.data.sort((a, b) => (a.amount > b.amount) ? -1 : 1);
       this.sortByAmountUpDown = false;
     } else {
-      TransactionalData.data = TransactionalData.data.sort((a, b) => (a.amount > b.amount) ? 1 : -1)
+      TransactionalData.data = TransactionalData.data.sort((a, b) => (a.amount > b.amount) ? 1 : -1);
       this.sortByAmountUpDown = true;
     }
     this.setDataSource();
