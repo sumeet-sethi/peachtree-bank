@@ -47,6 +47,12 @@ pipeline {
             }
         }
 
+        stage('E2E Tests') {
+            steps {
+                sh 'npm run e2e -- --baseUrl=https://peachtree-bank.netlify.app/'
+            }
+        }
+
         stage('Security Scan') {
             steps {
                 sh 'sonar-scanner -Dsonar.host.url=http://localhost:9000 -Dsonar.projectVersion=v${app_version}-${env.BUILD_NUMBER}'
