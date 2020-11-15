@@ -54,6 +54,10 @@ Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.
 
 ## Running end-to-end tests
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+Run the following command to execute the end-to-end tests via [Protractor](http://www.protractortest.org/):
 
-npm run e2e -- --baseUrl=https://peachtree-bank.netlify.app/
+`npm run e2e -- --baseUrl=https://peachtree-bank.netlify.app/`
+
+or 
+
+`npm run e2e -- --baseUrl=http://localhost:4200/`
