@@ -26,8 +26,11 @@ pipeline {
             }
         }
 
-        stage('Install Node Modules') {
+        stage('Install Dependencies') {
             steps {
+                script {
+                    app_version = sh(returnStdout: true, script: 'npm run version --silent').trim()
+                }
                 sh 'npm install'
             }
         }
@@ -46,7 +49,7 @@ pipeline {
 
         stage('Security Scan') {
             steps {
-                sh 'sonar-scanner -Dsonar.projectKey=app -Dsonar.sources=. -Dsonar.host.url=http://localhost:9000 -Dsonar.login=1ee9c0a8d12e42dce862432ccaff285471546923'
+                sh 'sonar-scanner -Dsonar.host.url=http://localhost:9000 -Dsonar.projectVersion=v${app_version}-${env.BUILD_NUMBER}'
             }
         }
 
@@ -58,9 +61,6 @@ pipeline {
 
         stage('Archive Artifact') {
             steps {
-                script {
-                    app_version = sh(returnStdout: true, script: 'npm run version --silent').trim()
-                }
                 sh 'source /etc/profile'
                 sh "curl -u${env.JFROG_ARTIFACTORY_JENKINS_USER}:${env.JFROG_ARTIFACTORY_JENKINS_PASSWORD} -T ./dist/provisioning-packages/app.zip '${env.JFROG_ARTIFACTORY_SERVER}/app/${app_version}/${env.BUILD_NUMBER}/app.zip'"
             }
