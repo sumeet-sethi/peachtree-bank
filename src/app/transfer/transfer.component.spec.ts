@@ -14,7 +14,7 @@ describe('TransferComponent', () => {
     fixture = TestBed.createComponent(TransferComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
-  }
+  };
 
   beforeEach(() => {
     prepareTestBed();
